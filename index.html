@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <style>
+      body {
+        background-color: lightgray;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+      }
+
+      input[type="text"] {
+        width: 100px;
+        height: 30px;
+        margin: 10px 0;
+        padding: 0 10px;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      button {
+        width: 120px;
+        height: 40px;
+        margin-top: 20px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculadora de nota</h1>
+      <input type="text" id="nota1" placeholder="Nota 1">
+      <input type="text" id="nota2" placeholder="Nota 2">
+      <button onclick="calculateGrade()">Calcular</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function calculateGrade() {
+        const nota1 = parseFloat(document.getElementById("nota1").value);
+        const nota2 = parseFloat(document.getElementById("nota2").value);
+        const result = 21 - (nota1 + nota2);
+        document.getElementById("result").innerHTML =
+          "A nota que você precisa tirar na próxima prova para obter média geral 7.00 é: " + result;
+      }
+    </script>
+  </body>
+</html>
